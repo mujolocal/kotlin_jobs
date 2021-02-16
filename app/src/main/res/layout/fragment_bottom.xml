@@ -8,12 +8,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/job_information"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/url"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="dummy text"/>
+            android:text="@string/dummy_text"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/name"
             android:layout_width="match_parent"
@@ -23,12 +27,12 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="dummy text"/>
+            android:text="@string/dummy_text"/>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="dummy text"/>
+            android:text="@string/dummy_text"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/logo"
@@ -40,7 +44,7 @@
             android:id="@+id/job_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="dummy text"/>
+            android:text="@string/dummy_text"/>
 
         </LinearLayout>
     </ScrollView>

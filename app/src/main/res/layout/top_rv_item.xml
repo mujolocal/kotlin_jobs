@@ -5,6 +5,7 @@
     android:layout_margin="5dp"
     android:orientation="horizontal">
     <LinearLayout
+        android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -13,21 +14,22 @@
         android:id="@+id/job_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="this is what the jobname would look like"/>
+        android:text="@string/this_is_what_the_jobname_would_look_like"/>
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/job_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="this is what the jobname would look like"/>
+        android:text="@string/this_is_what_the_jobname_would_look_like"/>
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/job_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="this is what the jobname would look like"/>
+        android:text="@string/this_is_what_the_jobname_would_look_like"/>
     </LinearLayout>
     <androidx.appcompat.widget.AppCompatImageView
+
         android:id="@+id/job_logo"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
         android:src="@drawable/image150"/>
 

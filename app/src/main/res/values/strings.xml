@@ -112,4 +112,8 @@
     <string name="text_appearance_button_label">Button</string>
     <string name="text_appearance_caption_label">Caption</string>
     <string name="text_appearance_overline_label">Overline</string>
+    <string name="job_information">Job Information</string>
+    <string name="dummy_text">dummy text</string>
+    <string name="list_of_jobs">List of JObs</string>
+    <string name="this_is_what_the_jobname_would_look_like">this is what the jobname would look like</string>
 </resources>
