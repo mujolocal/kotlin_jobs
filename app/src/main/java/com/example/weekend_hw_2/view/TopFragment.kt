@@ -12,12 +12,15 @@ import com.example.weekend_hw_2.R
 import com.example.weekend_hw_2.adapters.TopFragmentAdapter
 import com.example.weekend_hw_2.databinding.FragmentBottomBinding
 import com.example.weekend_hw_2.databinding.FragmentTopBinding
+import com.example.weekend_hw_2.model.Jobs
 import com.example.weekend_hw_2.viewModel.TopViewModel
 
 class TopFragment : Fragment() {
+
+    lateinit var  recyclerView: RecyclerView
     lateinit var binding: FragmentTopBinding
     lateinit var topViewModel: TopViewModel
-    var jobs = ArrayList<String>()
+    var jobs = Jobs()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,7 +32,7 @@ class TopFragment : Fragment() {
             jobs = topViewModel.jobs
         val topFragmentAdapter = TopFragmentAdapter(jobs)
         val linearLayoutManager = LinearLayoutManager(binding.root.context)
-        var recyclerView = binding.resultsRecycleView
+         recyclerView = binding.resultsRecycleView
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = topFragmentAdapter
         return binding.root

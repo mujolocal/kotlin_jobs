@@ -5,7 +5,7 @@ import java.io.Serializable
 data class Jobs (
 
 
-    val jobs: List<JobsItem> = listOf()
+    var jobs: MutableList<JobsItem> = mutableListOf()
 ): Serializable{
 
     override fun toString(): String {

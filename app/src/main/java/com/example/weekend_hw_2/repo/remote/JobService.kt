@@ -8,5 +8,5 @@ interface JobService {
     @GET("positions.json/")
     suspend fun getJobCoroutines(
         @Query("description") description: String
-    ): List<JobsItem>
+    ): MutableList<JobsItem>
 }

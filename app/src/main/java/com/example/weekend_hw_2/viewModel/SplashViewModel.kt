@@ -20,19 +20,19 @@ import retrofit2.Response
 class SplashViewModel:ViewModel() {
     private val TAG = "SplashViewModel"
 
-    private val _jobs = MutableLiveData<List<JobsItem>>()
+    private val _jobs = MutableLiveData<MutableList<JobsItem>>()
 
-    val jobs: LiveData<List<JobsItem>>
+    val jobs: LiveData<MutableList<JobsItem>>
         get() = _jobs
 
     init {
-        val callBack: Callback<List<JobsItem>> = object : Callback<List<JobsItem>> {
-            override fun onResponse(call: Call<List<JobsItem>>, response: Response<List<JobsItem>>) {
+        val callBack: Callback<MutableList<JobsItem>> = object : Callback<MutableList<JobsItem>> {
+            override fun onResponse(call: Call<MutableList<JobsItem>>, response: Response<MutableList<JobsItem>>) {
                 Log.d(TAG, "onResponse: completed")
                 _jobs.value = response.body()
             }
 
-            override fun onFailure(call: Call<List<JobsItem>>, t: Throwable) {
+            override fun onFailure(call: Call<MutableList<JobsItem>>, t: Throwable) {
                 Log.e(TAG, "onFailure: ", t)
             }
 

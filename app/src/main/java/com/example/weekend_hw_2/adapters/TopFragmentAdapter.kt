@@ -5,9 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weekend_hw_2.R
+import com.example.weekend_hw_2.model.Jobs
 import com.google.android.material.textview.MaterialTextView
 
-class TopFragmentAdapter(val jobs:ArrayList<String>): RecyclerView.Adapter<TopFragmentAdapter.JobViewHolder>(){
+class TopFragmentAdapter(var jobs: Jobs): RecyclerView.Adapter<TopFragmentAdapter.JobViewHolder>(){
 
     class JobViewHolder(view: View): RecyclerView.ViewHolder(view){
         val jobName: MaterialTextView
@@ -17,6 +18,7 @@ class TopFragmentAdapter(val jobs:ArrayList<String>): RecyclerView.Adapter<TopFr
         }
 
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
@@ -28,10 +30,10 @@ class TopFragmentAdapter(val jobs:ArrayList<String>): RecyclerView.Adapter<TopFr
     }
 
     override fun onBindViewHolder(holder: JobViewHolder, position: Int) {
-        holder.jobName.text = jobs[position]
+        holder.jobName.text = jobs.jobs[position].company
     }
 
     override fun getItemCount(): Int {
-        return jobs.size
+        return jobs.jobs.size
     }
 }

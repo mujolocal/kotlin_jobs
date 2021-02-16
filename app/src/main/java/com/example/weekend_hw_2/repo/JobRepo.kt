@@ -10,7 +10,7 @@ object JobRepo {
     val jobService = RetrofitInstance.jobService
 
 
-    suspend fun getJobs(type: String) : List<JobsItem> {
+    suspend fun getJobs(type: String) : MutableList<JobsItem> {
         return RetrofitInstance.jobService.getJobCoroutines(type)
     }
 }
