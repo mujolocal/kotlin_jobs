@@ -8,11 +8,7 @@ class TopViewModel:ViewModel() {
     var jobs = Jobs()
     init {
         jobs.jobs.add(JobsItem("a","a","a","a","a","a","a","a","a","a","a"))
-        jobs.jobs.add(JobsItem("a","a","a","a","a","a","a","a","a","a","a"))
-        jobs.jobs.add(JobsItem("a","a","a","a","a","a","a","a","a","a","a"))
-        jobs.jobs.add(JobsItem("a","a","a","a","a","a","a","a","a","a","a"))
-        jobs.jobs.add(JobsItem("a","a","a","a","a","a","a","a","a","a","a"))
-
     }
+
 
 }

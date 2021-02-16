@@ -30,7 +30,8 @@ class TopFragment : Fragment() {
         R.layout.fragment_top, container, false)
         topViewModel = TopViewModel()
             jobs = topViewModel.jobs
-        val topFragmentAdapter = TopFragmentAdapter(jobs)
+        val topFragmentAdapter = TopFragmentAdapter(jobs, this )
+
         val linearLayoutManager = LinearLayoutManager(binding.root.context)
          recyclerView = binding.resultsRecycleView
         recyclerView.layoutManager = linearLayoutManager

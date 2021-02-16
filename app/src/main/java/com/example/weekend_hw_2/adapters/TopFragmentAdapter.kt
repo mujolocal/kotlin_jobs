@@ -1,20 +1,34 @@
 package com.example.weekend_hw_2.adapters
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.weekend_hw_2.R
 import com.example.weekend_hw_2.model.Jobs
+import com.example.weekend_hw_2.view.TopFragment
 import com.google.android.material.textview.MaterialTextView
 
-class TopFragmentAdapter(var jobs: Jobs): RecyclerView.Adapter<TopFragmentAdapter.JobViewHolder>(){
+class TopFragmentAdapter(var jobs: Jobs,var topFragment: TopFragment ): RecyclerView.Adapter<TopFragmentAdapter.JobViewHolder>(){
 
     class JobViewHolder(view: View): RecyclerView.ViewHolder(view){
         val jobName: MaterialTextView
+        val jobTitle: MaterialTextView
+        val jobLocation: MaterialTextView
+        val jobLogo: ImageView
+
         init {
             jobName = view.findViewById(R.id.job_name)
-
+            jobTitle = view.findViewById(R.id.job_title)
+            jobLocation = view.findViewById(R.id.job_location)
+            jobLogo = view.findViewById(R.id.job_logo)
+            view.setOnClickListener({
+                Log.d(TAG, "jobholderview : ")
+            })
         }
 
     }
@@ -31,6 +45,9 @@ class TopFragmentAdapter(var jobs: Jobs): RecyclerView.Adapter<TopFragmentAdapte
 
     override fun onBindViewHolder(holder: JobViewHolder, position: Int) {
         holder.jobName.text = jobs.jobs[position].company
+        holder.jobTitle.text = jobs.jobs[position].title
+        holder.jobLocation.text = jobs.jobs[position].location
+        Glide.with(topFragment).load(jobs.jobs[position].company_logo).into(holder.jobLogo);
     }
 
     override fun getItemCount(): Int {

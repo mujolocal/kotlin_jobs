@@ -26,10 +26,9 @@
         android:text="this is what the jobname would look like"/>
     </LinearLayout>
     <androidx.appcompat.widget.AppCompatImageView
-
+        android:id="@+id/job_logo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black_900"
         android:src="@drawable/image150"/>
 
 </LinearLayout>

@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     fun topFragmentUpdate(){
         jobs = intent.extras?.getSerializable(JOBS_KEY) as Jobs
         topFragment = supportFragmentManager.findFragmentById(R.id.top_fragment) as TopFragment
-        val topFragmentAdapter = TopFragmentAdapter(jobs)
+        val topFragmentAdapter = TopFragmentAdapter(jobs, topFragment)
         topFragment.recyclerView.adapter = topFragmentAdapter
     }
 
