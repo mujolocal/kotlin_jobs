@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.weekend_hw_2.R
 import com.example.weekend_hw_2.databinding.FragmentBottomBinding
+import com.example.weekend_hw_2.model.JobsItem
 
 class BottomFragment : Fragment() {
     lateinit var binding: FragmentBottomBinding
@@ -21,4 +23,15 @@ class BottomFragment : Fragment() {
         )
         return binding.root
     }
+    fun setJob(jobsItem: JobsItem){
+        binding.name.text = jobsItem.company
+        binding.title.text = jobsItem.title
+        binding.url.text = jobsItem.url
+        binding.location.text = jobsItem.location
+        binding.jobDescription.text = jobsItem.description
+        Glide.with(this).load(jobsItem.company_logo).into(binding.logo);
+
+    }
+
+
 }

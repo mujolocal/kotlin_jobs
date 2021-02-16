@@ -3,13 +3,42 @@
 <LinearLayout
      android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:background="@color/purple_200"
     android:gravity="center">
+
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dummy text"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dummy text"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dummy text"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dummy text"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bottom Fragment"/>
+        android:src="@drawable/image150"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/job_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dummy text"/>
 
 </LinearLayout>
 </layout>

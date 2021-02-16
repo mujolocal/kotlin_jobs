@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val JOBS_KEY = "jobs_key"
     lateinit var jobs: Jobs
     lateinit var topFragment: TopFragment
+   lateinit var  bottomFragment: BottomFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,12 +30,23 @@ class MainActivity : AppCompatActivity() {
         )
         topFragmentUpdate()
 
+
+
     }
     fun topFragmentUpdate(){
         jobs = intent.extras?.getSerializable(JOBS_KEY) as Jobs
         topFragment = supportFragmentManager.findFragmentById(R.id.top_fragment) as TopFragment
         val topFragmentAdapter = TopFragmentAdapter(jobs, topFragment)
+        topFragmentAdapter.clickedJob.observe(this){
+            Log.d(TAG, "topFragmentUpdate: "+it.company)
+            bottomFragmentUpdate(it)
+        }
         topFragment.recyclerView.adapter = topFragmentAdapter
+    }
+
+    fun bottomFragmentUpdate( jobsItem: JobsItem){
+        bottomFragment = supportFragmentManager.findFragmentById(R.id.bottom_fragment) as BottomFragment
+        bottomFragment.setJob(jobsItem)
     }
 
 }
