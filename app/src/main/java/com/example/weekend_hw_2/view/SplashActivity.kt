@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.weekend_hw_2.R
 import com.example.weekend_hw_2.databinding.ActivitySplashBinding
+import com.example.weekend_hw_2.model.Jobs
 import com.example.weekend_hw_2.viewModel.SplashViewModel
 import com.google.android.material.textview.MaterialTextView
 import kotlinx.coroutines.CoroutineScope
@@ -18,7 +19,7 @@ import kotlinx.coroutines.launch
 import java.util.*
 
 class SplashActivity: AppCompatActivity() {
-
+    val JOBS_KEY = "jobs_key"
     private val TAG = "SplashActivity"
     private var requestFlag = false
     val splashViewModel: SplashViewModel = SplashViewModel()
@@ -32,8 +33,7 @@ class SplashActivity: AppCompatActivity() {
             R.layout.activity_splash
         )
         splashViewModel.jobs.observe(this) {
-            Log.d(TAG, "onCreate: " )
-            requestFlag = true
+            intent.putExtra(JOBS_KEY, Jobs(it))
             Log.d(TAG, "onCreate: reqest flag is "+requestFlag)
             startActivity(intent)
         }
