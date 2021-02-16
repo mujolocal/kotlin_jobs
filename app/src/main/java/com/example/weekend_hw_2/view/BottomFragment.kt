@@ -1,5 +1,7 @@
 package com.example.weekend_hw_2.view
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
@@ -28,6 +30,11 @@ class BottomFragment : Fragment() {
         binding.name.text = jobsItem.company
         binding.title.text = jobsItem.title
         binding.url.text = jobsItem.url
+            binding.url.setOnClickListener{
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(jobsItem.url)
+                startActivity(intent)
+            }
         binding.location.text = jobsItem.location
         binding.jobDescription.text = Html.fromHtml( jobsItem.description)
         Glide.with(this).load(jobsItem.company_logo).into(binding.logo);
