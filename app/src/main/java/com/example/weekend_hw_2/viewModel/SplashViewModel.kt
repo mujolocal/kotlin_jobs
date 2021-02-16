@@ -28,7 +28,7 @@ class SplashViewModel:ViewModel() {
     init {
         val callBack: Callback<List<JobsItem>> = object : Callback<List<JobsItem>> {
             override fun onResponse(call: Call<List<JobsItem>>, response: Response<List<JobsItem>>) {
-                Log.d(TAG, "onResponse: "+response.body())
+                Log.d(TAG, "onResponse: completed")
                 _jobs.value = response.body()
             }
 
@@ -40,7 +40,7 @@ class SplashViewModel:ViewModel() {
         }
     }
 
-    fun getJobs(count: Int = 10) {
+    fun getJobs() {
         viewModelScope.launch(Dispatchers.IO) {
             val jobList = JobRepo.getJobs("api")
             _jobs.postValue(jobList)
