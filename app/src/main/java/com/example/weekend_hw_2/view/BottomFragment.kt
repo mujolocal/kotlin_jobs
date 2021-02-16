@@ -1,6 +1,7 @@
 package com.example.weekend_hw_2.view
 
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +29,7 @@ class BottomFragment : Fragment() {
         binding.title.text = jobsItem.title
         binding.url.text = jobsItem.url
         binding.location.text = jobsItem.location
-        binding.jobDescription.text = jobsItem.description
+        binding.jobDescription.text = Html.fromHtml( jobsItem.description)
         Glide.with(this).load(jobsItem.company_logo).into(binding.logo);
 
     }
